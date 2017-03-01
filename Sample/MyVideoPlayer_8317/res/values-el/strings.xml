@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Βίντεο"</string>
+    <string name="storage_error_message">"Δεν βίντεο!"</string>
+    <string name="storage_error_message_detail">"Το σχετικό αρχείο media δεν βρέθηκε!"</string>
+    <string name="preview_playback">"προεπισκόπηση"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Δυστυχώς, αυτό το βίντεο δεν είναι έγκυρο για ροή σε αυτή τη συσκευή."</string>
+    <string name="videoview_error_text_unknown">"Δυστυχώς, αυτό το βίντεο δεν μπορεί να παίξει."</string>
+    <string name="scanning">"Σάρωση ... παρακαλώ περιμένετε"</string>
+    <string name="VideoView_error_title">"Δεν είναι δυνατή η αναπαραγωγή βίντεο"</string>
+    <string name="loading_video">"Φόρτωση βίντεο"</string>
+    <string name="tab_inand">"Εσωτερική αποθήκευσης"</string>
+</resources>

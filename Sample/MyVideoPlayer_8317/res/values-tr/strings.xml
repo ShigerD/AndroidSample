@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"video"</string>
+    <string name="storage_error_message">"Hiç video!"</string>
+    <string name="storage_error_message_detail">"İlgili medya dosyası bulunamadı!"</string>
+    <string name="preview_playback">"önizleme"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Üzgünüm, Bu videoyu bu cihaza akış için geçerli değil."</string>
+    <string name="videoview_error_text_unknown">"Üzgünüm, Bu videoyu çalınamaz."</string>
+    <string name="scanning">"Tarama ... lütfen bekleyin"</string>
+    <string name="VideoView_error_title">"Video oynatamıyorum"</string>
+    <string name="loading_video">"video İzleme"</string>
+    <string name="tab_inand">"dahili Depolama"</string>
+</resources>

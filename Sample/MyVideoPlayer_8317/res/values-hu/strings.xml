@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"videó"</string>
+    <string name="storage_error_message">"No video!"</string>
+    <string name="storage_error_message_detail">"A kapcsolódó média fájl nem található!"</string>
+    <string name="preview_playback">"előnézet"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Sajnálom, ez a videó nem érvényes streaming erre az eszközre."</string>
+    <string name="videoview_error_text_unknown">"Sajnálom, ezt a videót nem lehet lejátszani."</string>
+    <string name="scanning">"Vizsgálat ... kérem várjon"</string>
+    <string name="VideoView_error_title">"Nem lehet lejátszani a video"</string>
+    <string name="loading_video">"betöltése video"</string>
+    <string name="tab_inand">"Belső tárolás"</string>
+</resources>

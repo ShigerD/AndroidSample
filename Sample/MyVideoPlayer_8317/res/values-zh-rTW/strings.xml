@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"視頻"</string>
+    <string name="storage_error_message">"沒有發現視頻"</string>
+    <string name="storage_error_message_detail">"未找到相關媒體文件!"</string>
+    <string name="preview_playback">"正在預覽"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"抱歉，該視頻不適合在此設備上播放。"</string>
+    <string name="videoview_error_text_unknown">"很抱歉，無法播放此視頻。"</string>
+    <string name="scanning">"正在掃描，請稍等"</string>
+    <string name="VideoView_error_title">"無法播放視頻"</string>
+    <string name="loading_video">"正在載入視頻..."</string>
+    <string name="tab_inand">"硬碟"</string>
+</resources>

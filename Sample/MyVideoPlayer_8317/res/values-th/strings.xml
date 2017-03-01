@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"วีดีโอ"</string>
+    <string name="storage_error_message">"ไม่มีวิดีโอ!"</string>
+    <string name="storage_error_message_detail">"แฟ้มสื่อที่เกี่ยวข้องไม่พบ"</string>
+    <string name="preview_playback">"การแสดงตัวอย่าง"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"ขออภัยวิดีโอนี้ไม่ถูกต้องสำหรับการสตรีมไปยังอุปกรณ์นี้"</string>
+    <string name="videoview_error_text_unknown">"ขออภัยวิดีโอนี้ไม่สามารถเล่นได้"</string>
+    <string name="scanning">"สแกน ... กรุณารอสักครู่"</string>
+    <string name="VideoView_error_title">"ไม่สามารถเล่นวิดีโอ"</string>
+    <string name="loading_video">"กำลังโหลดวิดีโอ"</string>
+    <string name="tab_inand">"หน่วยความจำภายใน"</string>
+</resources>

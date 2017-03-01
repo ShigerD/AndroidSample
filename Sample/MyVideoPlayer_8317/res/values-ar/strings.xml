@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"فيديو"</string>
+    <string name="storage_error_message">"لا يوجد فيديو!"</string>
+    <string name="storage_error_message_detail">"ملف الوسائط ذات الصلة غير موجود!"</string>
+    <string name="preview_playback">"معاينة"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"عذرا، هذا الفيديو غير صالح للتدفق إلى هذا الجهاز."</string>
+    <string name="videoview_error_text_unknown">"آسف، لا يمكن أن تؤديه هذا الفيديو."</string>
+    <string name="scanning">"المسح ... يرجى الانتظار"</string>
+    <string name="VideoView_error_title">"لا يمكن ان تلعب الفيديو"</string>
+    <string name="loading_video">"تحميل الفيديو"</string>
+    <string name="tab_inand">"وحدة التخزين الداخلية"</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Video"</string>
+    <string name="storage_error_message">"Nessun video!"</string>
+    <string name="storage_error_message_detail">"Il file multimediale correlato non trovato!"</string>
+    <string name="preview_playback">"la visualizzazione in anteprima"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Siamo spiacenti, questo video non è valida per lo streaming a questo dispositivo."</string>
+    <string name="videoview_error_text_unknown">"Siamo spiacenti, questo video non può essere riprodotto."</string>
+    <string name="scanning">"Scansione in corso ... Attendere prego"</string>
+    <string name="VideoView_error_title">"Impossibile riprodurre il video"</string>
+    <string name="loading_video">"Loading video"</string>
+    <string name="tab_inand">"Storage interno"</string>
+</resources>

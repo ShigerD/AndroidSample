@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="@*android:dimen/status_bar_height"
+    android:orientation="horizontal" >
+	<RadioGroup
+	    android:id="@+id/radio_group"
+	    android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+	    android:paddingTop="10dip"
+	    android:layout_marginLeft="15dip"
+	    android:orientation="vertical" >
+	    <RadioButton
+	        android:id="@+id/storage_hd"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:button="@null"
+	        android:background="@drawable/icon_hd"/>
+	
+	    <RadioButton
+	        android:id="@+id/storage_usb"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:button="@null"
+	        android:visibility="gone"
+	        android:background="@drawable/icon_usb"/>
+	
+	    <RadioButton
+	        android:id="@+id/storage_sd"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:button="@null"
+	        android:visibility="gone"
+	        android:background="@drawable/icon_sd" />
+	</RadioGroup>
+	
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:gravity="center">
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/b_bg"
+	        android:layout_centerInParent="true"
+	        />
+	    <FrameLayout 
+	        android:id="@+id/container"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent">
+	    </FrameLayout>
+	</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Vidéo"</string>
+    <string name="storage_error_message">"Pas de vidéo!"</string>
+    <string name="storage_error_message_detail">"Le fichier multimédia lié introuvable!"</string>
+    <string name="preview_playback">"prévisualisation"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Désolé, cette vidéo n'est pas valable pour la diffusion de ce dispositif."</string>
+    <string name="videoview_error_text_unknown">"Désolé, cette vidéo ne peut être lu."</string>
+    <string name="scanning">"Numérisation ... Veuillez patienter"</string>
+    <string name="VideoView_error_title">"Vous ne pouvez pas lire la vidéo"</string>
+    <string name="loading_video">"Chargement de la vidéo"</string>
+    <string name="tab_inand">"Stockage interne"</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"відео"</string>
+    <string name="storage_error_message">"З відео!"</string>
+    <string name="storage_error_message_detail">"Пов'язаних мультимедійний файл не знайдений!"</string>
+    <string name="preview_playback">"попередній перегляд"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"На жаль, це відео не дійсна для потокової передачі цього пристрою."</string>
+    <string name="videoview_error_text_unknown">"На жаль, відео не можуть бути відтворені."</string>
+    <string name="scanning">"Сканування ... будь ласка, зачекайте"</string>
+    <string name="VideoView_error_title">"Неможливо відтворити відео"</string>
+    <string name="loading_video">"відео Завантаження"</string>
+    <string name="tab_inand">"ємність внутрішньої системи зберігання"</string>
+</resources>

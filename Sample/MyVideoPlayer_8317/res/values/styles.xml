@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Teyes" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@*android:drawable/default_wallpaper</item>
+    </style>
+    
+    <style name="Widget.Progress.Loading" parent="android:Widget.ProgressBar.Large">
+        <item name="android:indeterminateDrawable">@drawable/progress_large_white</item>
+        <item name="android:minWidth">100dip</item>
+        <item name="android:maxWidth">100dip</item>
+        <item name="android:minHeight">100dip</item>
+        <item name="android:maxHeight">100dip</item>
+    </style>
+    
+    <style name="VideoSeekBar">
+        <item name="android:thumb">@drawable/h_seekbar_thumb</item>
+        <item name="android:progressDrawable">@drawable/h_seekbar</item>
+        <item name="android:thumbOffset">0dip</item>
+    </style>
+    
+</resources>

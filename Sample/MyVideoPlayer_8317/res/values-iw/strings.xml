@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"וידאו"</string>
+    <string name="storage_error_message">"אין וידאו!"</string>
+    <string name="storage_error_message_detail">"קובץ המדיה הקשור לא נמצא!"</string>
+    <string name="preview_playback">"תצוגה מקדימה"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"וידאו זה אינו מתאים להזרמה להתקן זה."</string>
+    <string name="videoview_error_text_unknown">"וידאו זה לא ניתן לניגון."</string>
+    <string name="scanning">"סורק...אנא המתינו"</string>
+    <string name="VideoView_error_title">"וידאו לא ניתן לניגון"</string>
+    <string name="loading_video">"טוען וידאו"</string>
+    <string name="tab_inand">"דיסק קשיח"</string>
+</resources>

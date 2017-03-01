@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"تصویری"</string>
+    <string name="storage_error_message">"هیچ تصویری!"</string>
+    <string name="storage_error_message_detail">"فایل های رسانه ای مرتبط یافت نشد!"</string>
+    <string name="preview_playback">"پیش نمایش"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"با عرض پوزش، این ویدیو برای پخش در این دستگاه معتبر نیست."</string>
+    <string name="videoview_error_text_unknown">"با عرض پوزش، این ویدیو را نمی توان پخش کرد."</string>
+    <string name="scanning">"اسکن ... لطفا صبر کنید"</string>
+    <string name="VideoView_error_title">"می توانید ویدیو را بازی نمی کند"</string>
+    <string name="loading_video">"در حال بارگذاری ویدئو"</string>
+    <string name="tab_inand">"حافظه داخلی"</string>
+</resources>

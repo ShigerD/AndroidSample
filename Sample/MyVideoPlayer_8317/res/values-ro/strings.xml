@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"video"</string>
+    <string name="storage_error_message">"Nici un video!"</string>
+    <string name="storage_error_message_detail">"Fișierul media asociate nu a fost găsit!"</string>
+    <string name="preview_playback">"previzualizare"</string>
+    <string name="videoview_error_text_invalid_progressive_playback">"Ne pare rău, acest videoclip nu este valabilă pentru streaming la acest aparat."</string>
+    <string name="videoview_error_text_unknown">"Ne pare rău, acest videoclip nu poate fi redat."</string>
+    <string name="scanning">"Scanare ... va rugam asteptati"</string>
+    <string name="VideoView_error_title">"Nu poate reda video"</string>
+    <string name="loading_video">"încărcarea Video"</string>
+    <string name="tab_inand">"de stocare intern"</string>
+</resources>
