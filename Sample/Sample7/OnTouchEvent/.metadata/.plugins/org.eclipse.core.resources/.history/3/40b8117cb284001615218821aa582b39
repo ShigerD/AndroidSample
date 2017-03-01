@@ -1,0 +1,83 @@
+package com.example.touchevent;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+
+
+public class MainActivity extends Activity {
+	
+	MyView myview;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        myview =new MyView(this);
+        setContentView(myview);
+    }
+    public boolean onTouchEvent(MotionEvent event){
+    	switch(event.getAction()){
+    	case MotionEvent.ACTION_DOWN:
+    		myview.x=(int)event.getX();
+    		myview.y=(int)event.getY()-52;
+    		myview.postInvalidate();
+    		break;
+    	case MotionEvent.ACTION_MOVE:
+    		myview.x=(int)event.getX();
+    		myview.y=(int)event.getY()-52;
+    		myview.postInvalidate();
+    		break;
+    	case MotionEvent.ACTION_UP:
+    		myview.x=-100;
+    		myview.y=-100;
+    		myview.postInvalidate();
+    		break;
+    		
+    	}
+		return super.onTouchEvent(event);
+    	
+    }
+
+    class MyView extends View{
+    	Paint paint;
+    	int x=50;
+    	int y=50;
+    	int a=50;
+		public MyView(Context context) {
+			
+			super(context);
+			paint=new Paint();
+			
+		}
+		protected void onDraw(Canvas canvas){
+			canvas.drawColor(Color.GRAY);
+			canvas.drawRect(x, y, x+a, y+a, paint);
+			super.onDraw(canvas);
+		}
+    	
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

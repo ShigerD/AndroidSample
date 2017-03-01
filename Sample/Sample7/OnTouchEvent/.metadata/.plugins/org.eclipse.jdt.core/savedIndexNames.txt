@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+M:\Androidpro\Sample\Sample7\OnTouchEvent\.metadata\.plugins\org.eclipse.jdt.core
+286157996.index
+1533404434.index
+2885812301.index

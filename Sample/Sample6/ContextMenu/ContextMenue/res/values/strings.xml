@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ContextMenue</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="mi1">选项1</string>
+    <string name="mi2">选项2</string>
+    <string name="mi3">选项3</string>
+    <string name="mi4">选项4</string>
+    <string name="et1">文本1</string>
+    <string name="et2">文本2</string>
+    <string name="et3">文本3</string>
+    <string name="mi5">选项5</string>
+
+</resources>

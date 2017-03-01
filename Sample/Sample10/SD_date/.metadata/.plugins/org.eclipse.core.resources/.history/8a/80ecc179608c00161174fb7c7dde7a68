@@ -1,0 +1,191 @@
+package com.example.sd_data;
+
+import java.io.File;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity {
+	TextView tv;
+	String mysdPath;
+	public static String myFilePath;
+	String tvcontent;
+	public String myPictureSourse;
+	public String myMusicSourse;
+
+	MediaPlayer mp;
+	File myfile;
+	ImageView myiv;
+	int btnmusic_n=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button btnmusic=(Button)findViewById(R.id.button1);
+        Button btnlist=(Button)findViewById(R.id.List);
+        Button btnpicture=(Button)findViewById(R.id.Picture);
+        tv=(TextView)findViewById(R.id.textView1);
+        myiv=(ImageView)findViewById(R.id.imageView1);
+        
+        mysdPath=getsdcardpath();
+        myFilePath=mysdPath+"/A_MySdData1";
+       
+        tv.setText(myFilePath);
+        mp=new MediaPlayer();
+        
+       
+        myfile=new File(myFilePath);    //new my file
+        if(!myfile.exists()) 	myfile.mkdir();//
+
+        myPictureSourse=myFilePath+"/h2.jpg";
+        myMusicSourse=myFilePath+"/music.mp3";
+        /*
+         * 
+         */
+       
+        btnmusic.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				btnmusic_n++;
+				btnmusic_n%=3;
+				if(btnmusic_n==1)
+					try{
+					//mp.setDataSource("/storage/sdcard/music.mp3");
+					//mp.setDataSource("/storage/emulated/0/sdData/music.mp3");		
+					mp.setDataSource(myMusicSourse);	
+					
+					mp.prepare();
+					mp.start();
+	
+					tv.setText("音乐准备中。。。");
+					
+					Bitmap bm=BitmapFactory.decodeFile(myPictureSourse);
+					myiv.setImageBitmap(bm);
+					}
+					catch(Exception e){
+					e.printStackTrace();				
+					}
+				else if(btnmusic_n==2){
+					tv.setText("音乐暂停中。。。");
+					mp.pause();
+				}
+				else if(btnmusic_n==0){
+					tv.setText("音乐重置中。。。");
+					mp.reset();
+				}				
+			}
+		});
+        /*
+         * 
+         */
+        btnpicture.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				try{
+	
+					tv.setText("图片切换。。。");
+					
+					Bitmap bm=BitmapFactory.decodeFile(myFilePath+"/h2.jpg");
+					myiv.setImageBitmap(bm);
+				}
+				catch(Exception e){
+					e.printStackTrace();				}
+			}
+		});
+	/* */   
+        btnlist.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {			
+				tv.setText("list测Ⅹ。。。");
+		//        	Intent serverIntent = new Intent(this, DeviceListActivity.class);
+		//			startActivityForResult(serverIntent, 1);		
+			}
+		});  
+	     
+        
+    }
+/*
+ * 
+ */
+ // 获取文件列表方法
+ 	private void getFileDir(String path) {
+ 		//showXPath.setText(path);//显示当前路径
+ 		//items = new ArrayList<String>();
+ 		//paths = new ArrayList<String>();
+ 		// 获取当前路径下的文件
+ 		File presentFile = new  File(path);
+ 		File[] files = presentFile.listFiles();
+ 	/*	
+ 		if (! path.equals(rootPath)) {
+ 			// 返回根目录
+ 			items.add("back to /");
+ 			paths.add(rootPath);
+ 			// 返回上一级目录
+ 			items.add("back previous");
+ 			paths.add(presentFile.getParent());
+ 		}
+ 	*/
+ 		// 添加当前路径下的所有的文件名和路径
+ 		for (File f : files) {
+ 			tvcontent+=(f.getName());
+ 			//paths.add(f.getPath());
+ 		}
+ 		
+ 		// 设置列表适配器
+ 		//setListAdapter(new FileListAdapter(FileManagerActivity.this, items, paths));
+ 	}
+/*
+ * get SD path
+ */
+    public static String getsdcardpath(){
+    	String sdPath="";
+    	sdPath=Environment.getExternalStorageDirectory()
+    			.getAbsolutePath();
+    	return sdPath;
+    }
+/*
+ * (android.view.Menu)
+ */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+        	tv.setText("Menu,Work");
+        	getFileDir(myFilePath);
+        	tv.setText(tvcontent);
+        	
+        	Intent serverIntent = new Intent(this, DeviceListActivity.class);
+			startActivityForResult(serverIntent, 1);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

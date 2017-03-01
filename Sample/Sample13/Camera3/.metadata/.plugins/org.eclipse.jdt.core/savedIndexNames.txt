@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+M:\Androidpro\Sample\Sample13\Camera3\.metadata\.plugins\org.eclipse.jdt.core
+1610516846.index
+1533404434.index
+3037362375.index

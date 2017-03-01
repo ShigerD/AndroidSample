@@ -1,0 +1,5 @@
+#Mon Sep 26 18:31:32 CST 2016
+com.android.ide.eclipse.adt.sdk=M\:\\tools\\AndroidSDK\\sdk
+eclipse.preferences.version=1
+com.android.ide.eclipse.adt.fixLegacyEditors=1
+com.android.ide.eclipse.adt.xmlEditor=true

@@ -1,0 +1,47 @@
+package com.example.filemanage;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.app.ListActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+public class FileManagerActivity  extends ListActivity {
+	private TextView showXPath;// 显示文件文件路径
+	private ArrayList<String> items;// 要显示的文件名
+	private ArrayList<String> paths;// 显示文件路径
+	private String rootPath = "/";// 根目录
+	private View renameDialogView;// 重命名对话框视图
+	private EditText nameEdit;
+    protected void onCreate(Bundle savedInstanceState) {
+        /** Called when the activity is first created. */
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

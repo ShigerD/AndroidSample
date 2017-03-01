@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sample3_5</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+     <string name="uid">用户名</string>
+     <string name="pwd">密码</string>
+     <string name="cancel">取消</string>
+     <string name="ok">确定</string>
+</resources>

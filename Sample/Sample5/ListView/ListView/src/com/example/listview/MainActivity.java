@@ -1,0 +1,136 @@
+package com.example.listview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+
+@SuppressWarnings("deprecation")
+public class MainActivity extends Activity {
+
+	int[] drawableIds={R.drawable.p1,R.drawable.p2,R.drawable.p3,R.drawable.p4};
+	int[] msgIds={R.string.andy,R.string.bill,R.string.edgar,R.string.turing};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ListView lv=(ListView)this.findViewById(R.id.listView1);
+        BaseAdapter ba=new BaseAdapter(){
+
+			@Override
+			public int getCount() {
+				return 4;
+			} //4ge
+
+			@Override
+			public Object getItem(int arg0) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public long getItemId(int arg0) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			@Override
+			public View getView(int arg0, View arg1, ViewGroup arg2) {
+				// TODO Auto-generated method stub
+				LinearLayout ll=new LinearLayout(MainActivity.this);
+				ll.setOrientation(LinearLayout.HORIZONTAL);
+				ll.setPadding(5,5,5,5);
+				ImageView ii=new ImageView(MainActivity.this);
+				ii.setImageDrawable(getResources().getDrawable(drawableIds[arg0]));
+				ii.setScaleType(ImageView.ScaleType.FIT_XY);
+				ii.setLayoutParams(new Gallery.LayoutParams(100,98));
+				ll.addView(ii);
+				TextView tv=new TextView(MainActivity.this);
+				tv.setText(getResources().getText(msgIds[arg0]));
+				tv.setTextSize(24);
+				tv.setTextColor(R.color.black);// different
+				tv.setPadding(5, 5, 5,5);
+				tv.setGravity(Gravity.LEFT);
+				ll.addView(tv);
+				
+				return ll;
+			}   	
+        };
+        lv.setAdapter(ba);
+        /*
+        lv.setOnItemSelectedListener(new OnItemSelectedListener(){
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				TextView tv=(TextView)findViewById(R.id.textView1);
+				LinearLayout ll=(LinearLayout)arg1;
+				TextView tvn=(TextView)ll.getChildAt(1);
+				StringBuilder sb=new StringBuilder();
+				sb.append(getResources().getText(R.string.ys));
+				sb.append(":");
+				sb.append(tvn.getText());
+				String stemp=sb.toString();
+				tv.setText(stemp.split("\\n")[0]);			
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+			}
+        	
+        });
+        */
+        lv.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				TextView tv=(TextView)findViewById(R.id.textView1);
+				LinearLayout ll=(LinearLayout)arg1;
+				TextView tvn=(TextView)ll.getChildAt(1);
+				StringBuilder sb=new StringBuilder();
+				sb.append(getResources().getText(R.string.ys));
+				//sb.append(":");
+				sb.append(tvn.getText());
+				String stemp=sb.toString();
+				tv.setText(stemp);
+				
+			}
+        	
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

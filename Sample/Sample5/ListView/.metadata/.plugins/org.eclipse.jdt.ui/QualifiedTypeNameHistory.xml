@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.listview.R.drawable"/>
+<fullyQualifiedTypeName name="android.widget.ListView"/>
+<fullyQualifiedTypeName name="android.widget.BaseAdapter"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.widget.ImageView.ScaleType"/>
+<fullyQualifiedTypeName name="android.widget.Gallery.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.Gallery"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.example.listview.R.color"/>
+<fullyQualifiedTypeName name="android.view.Gravity"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemSelectedListener"/>
+<fullyQualifiedTypeName name="com.example.listview.R.layout"/>
+<fullyQualifiedTypeName name="com.example.listview.R.id"/>
+<fullyQualifiedTypeName name="com.example.listview.R.string"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemClickListener"/>
+</qualifiedTypeNameHistroy>

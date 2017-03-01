@@ -1,0 +1,12 @@
+package com.example.sample2_5;
+
+import android.graphics.Paint;
+import android.view.View;
+
+public class MyView extends View{
+	Paint paint;
+	Public MyView(Context context){
+		
+	}
+
+}

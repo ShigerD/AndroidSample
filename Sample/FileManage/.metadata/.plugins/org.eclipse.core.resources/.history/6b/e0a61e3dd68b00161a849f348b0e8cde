@@ -1,0 +1,133 @@
+package com.example.filemanage;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+
+
+public class FileManagerActivity  extends ListActivity {
+	private TextView showXPath;// 显示文件文件路径
+	private ArrayList<String> items;// 要显示的文件名
+	private ArrayList<String> paths;// 显示文件路径
+	private String rootPath = "/";// 根目录
+	private View renameDialogView;// 重命名对话框视图
+	private EditText nameEdit;
+    protected void onCreate(Bundle savedInstanceState) {
+        /** Called when the activity is first created. */
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        showXPath = (TextView) findViewById(R.id.xPath);
+        getFileDir(rootPath);// 获取文件列表
+    }
+/*
+ * (non-Javadoc)
+ * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+ */
+    // 获取文件列表方法
+ 	private void getFileDir(String path) {
+ 		showXPath.setText(path);//显示当前路径
+ 		items = new ArrayList<String>();
+ 		paths = new ArrayList<String>();
+ 		// 获取当前路径下的文件
+ 		File presentFile = new  File(path);
+ 		File[] files = presentFile.listFiles();
+ 		
+ 		if (! path.equals(rootPath)) {
+ 			// 返回根目录
+ 			items.add("back to /");
+ 			paths.add(rootPath);
+ 			// 返回上一级目录
+ 			items.add("back previous");
+ 			paths.add(presentFile.getParent());
+ 		}
+ 		
+ 		// 添加当前路径下的所有的文件名和路径
+ 		for (File f : files) {
+ 			items.add(f.getName());
+ 			paths.add(f.getPath());
+ 		}
+ 		
+ 		// 设置列表适配器
+ 		setListAdapter( new FileListAdapter(FileManagerActivity.this, items, paths));
+ 	}
+ 	/*
+ 	 * 
+ 	 */
+ 	public class FileListAdapter extends BaseAdapter {
+ 		
+ 		private List<String> items;
+ 		private List<String> paths;
+ 		private LayoutInflater inflater;
+ 		private Bitmap rootIcon;
+ 		private Bitmap prevIcon;
+ 		private Bitmap docIcon;
+ 		private Bitmap folderIcon;
+ 		
+ 		
+ 		public FileListAdapter(Context context, List<String> items,
+ 				List<String> paths) {
+ 			// 从context获取一个布局加载器
+ 			inflater = LayoutInflater.from(context);
+ 			this.items = items;
+ 			this.paths = paths;
+ 			// 初始化关联图标
+ 			rootIcon = BitmapFactory.decodeResource(context.getResources(), 
+ 					R.drawable.back_root);
+ 			prevIcon = BitmapFactory.decodeResource(context.getResources(), 
+ 					R.drawable.back_prev);
+ 			docIcon = BitmapFactory.decodeResource(context.getResources(), 
+ 					R.drawable.doc);
+ 			folderIcon = BitmapFactory.decodeResource(context.getResources(), 
+ 					R.drawable.folder);
+ 			
+ 		}
+
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+
+		@Override
+		public View getView(int arg0, View arg1, ViewGroup arg2) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+ 	}
+
+
+
+}

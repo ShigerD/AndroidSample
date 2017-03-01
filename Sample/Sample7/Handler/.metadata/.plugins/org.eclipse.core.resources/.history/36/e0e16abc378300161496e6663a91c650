@@ -1,0 +1,128 @@
+package com.example.handler;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+
+
+public class MainActivity extends Activity {
+	ImageView myImageView;
+	
+	public static int imageState=0;
+	public static int speed=1000;
+
+	Handler myHandler=new Handler(){
+		public void handleMessage(Message msg){
+			switch(msg.what){
+			case 0:
+				myImageView.setImageResource(R.drawable.h2);break;
+			case 1:
+				myImageView.setImageResource(R.drawable.h3);break;
+			case 2:
+				myImageView.setImageResource(R.drawable.h4);break;
+			case 3:
+				myImageView.setImageResource(R.drawable.h5);break;
+			case 4:
+				myImageView.setImageResource(R.drawable.h6);break;
+			case 5:
+				myImageView.setImageResource(R.drawable.h7);break;
+			case 6:
+				myImageView.setImageResource(R.drawable.h8);break;
+			case 7:
+				myImageView.setImageResource(R.drawable.h9);break;
+			case 8:
+				myImageView.setImageResource(R.drawable.h10);break;
+			case 9:
+				myImageView.setImageResource(R.drawable.h0);break;
+			}
+			
+			super.handleMessage(msg);
+			
+		}
+	};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        myImageView=(ImageView)findViewById(R.id.imageView1);
+        MyThread myThread=new MyThread(this);
+        myThread.start();
+        final Button myClick=(Button)findViewById(R.id.button1);
+    	Button speedUp=(Button)findViewById(R.id.button2);
+    	Button speedDo=(Button)findViewById(R.id.button3);
+    	/**/
+    	myClick.setOnClickListener(new OnClickListener(){
+    			int num=1;
+	    			@Override
+				public void onClick(View arg0) {
+				 
+				// TODO Auto-generated method stub				
+				if(num==0) imageState=0;
+				else if(num==1) imageState=1;
+				num++;
+				num%=2;
+	    			}       
+	    			
+    		});
+    	
+    
+    	/**/
+    	speedUp.setOnClickListener(new OnClickListener(){
+    			
+	    			@Override
+				public void onClick(View arg0) {
+				 
+				// TODO Auto-generated method stub	
+	    				speed+=100;   				
+	    				myClick.setText("Tim:"+speed);
+	    			}       	
+    		});
+    	/**/
+    	speedDo.setOnClickListener(new OnClickListener(){
+    			
+	    			@Override
+				public void onClick(View arg0) {
+				 
+				// TODO Auto-generated method stub	
+	    				if(speed>=200)		speed-=100;
+	    				else if(speed>50)  speed-=50;
+	    			//	else    speed-=1;
+	    				else if(speed>=0)   speed-=5;
+	    				
+	    				if (speed<0)        speed=5;
+				myClick.setText("Tim:"+speed);
+	    			}       	
+    		});
+    
+    		
+    
+        
+        
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

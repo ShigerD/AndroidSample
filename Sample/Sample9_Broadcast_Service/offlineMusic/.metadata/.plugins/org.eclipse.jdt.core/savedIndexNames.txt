@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+M:\Androidpro\Sample\Sample9_Broadcast_Service\offlineMusic\.metadata\.plugins\org.eclipse.jdt.core
+2379100926.index
+1533404434.index
+2666039583.index

@@ -1,0 +1,103 @@
+package com.example.http;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+
+public class MainActivity extends Activity {
+
+	String urlPost="http://192.168.75.1:8080/MyHttpSample/response.jsp";
+	String urlGet="http://www.baidu.com";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button btnPost=(Button)findViewById(R.id.button1);
+        btnPost.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				HttpPost httpPostRequest =new HttpPost(urlPost);
+				List<NameValuePair> httpParams=new ArrayList<NameValuePair>();
+				httpParams.add(new BasicNameValuePair("name","Java"));
+				try{
+					httpPostRequest.setEntity(new UrlEncodedFormEntity(httpParams,
+							HTTP.UTF_8));
+					HttpResponse httpResponse=new
+							DefaultHttpClient().execute(httpPostRequest);
+					if(httpResponse.getStatusLine().getStatusCode()==200){
+						String result =EntityUtils.toString(httpResponse.getEntity());
+						result=result.replaceAll("\r\n|\n\r|\r\n", "");
+						EditText etPost=(EditText)findViewById(R.id.etpost);
+						etPost.setText(result);
+					}
+				}catch(Exception e){
+					EditText etPost=(EditText)findViewById(R.id.etpost);
+					etPost.setText("连接出错："+e.getCause());
+				}
+			}
+        	});	
+        Button btnGet=(Button)findViewById(R.id.button2);
+        btnGet.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+			HttpGet httpget=new HttpGet(urlGet);
+			try{
+				HttpResponse httpResponse=new DefaultHttpClient().execute(httpget);
+				if(httpResponse.getStatusLine().getStatusCode()==200){
+					String result =EntityUtils.toString(httpResponse.getEntity());
+					result=result.replaceAll("\r\n|\n\r|\r\n", "");
+					EditText etGet=(EditText)findViewById(R.id.editText2);
+					etGet.setText(result);
+				}
+			}catch(Exception e){
+				EditText etGet=(EditText)findViewById(R.id.editText2);
+				etGet.setText("连接出错："+e.getCause());
+			}
+				
+			}
+		});
+        
+        
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

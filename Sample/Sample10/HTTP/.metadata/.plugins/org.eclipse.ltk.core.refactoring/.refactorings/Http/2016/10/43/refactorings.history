@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“com.example.http.R.id”中的字段“editText1”重命名为“etpost”&#x0D;&#x0A;－ 原始项目：“Http”&#x0D;&#x0A;－ 原始元素：“com.example.http.R.id.editText1”&#x0D;&#x0A;－ 重命名的元素：“com.example.http.R.id.etpost”&#x0D;&#x0A;－ 更新对已重构元素的引用&#x0D;&#x0A;－ 更新注释和字符串中出现的文本" delegate="false" deprecate="true" description="重命名字段“editText1”" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/gen&lt;com.example.http{R.java[R[id^editText1" name="etpost" references="true" setter="false" stamp="1476608354564" textual="false" version="1.0"/>
+</session>
